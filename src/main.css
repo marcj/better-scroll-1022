@@ -1,0 +1,42 @@
+body {
+    text-align: center;
+    overflow: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.frame {
+    border: 1px solid silver;
+    box-shadow: 0 3px 3px #9c9c9c;
+    margin: auto;
+    text-align: left;
+    max-height: 500px;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.header-container {
+    flex: 1;
+    background-color: #eee;
+    overflow: hidden;
+}
+
+#header {
+    padding: 5px 20px;
+    --scroll-animation-scroll-top: 0px;
+    height: calc(150px - var(--scroll-animation-scroll-top));
+    min-height: 100px;
+}
+
+#content {
+    position: relative;
+    flex: 1;
+    overflow: hidden;
+}
+
+.padding {
+    padding: 5px 25px;
+}
