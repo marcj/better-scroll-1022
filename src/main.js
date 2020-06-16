@@ -46,8 +46,15 @@ function letsGo() {
 
         header.style.setProperty('--scroll-animation-scroll-top', scrollTop + 'px');
 
+        const heightChanged = content.offsetHeight !== lastHeight;
+
         if (!lastHeight) lastHeight = content.offsetHeight;
         content.style.paddingTop = (content.offsetHeight - lastHeight) + 'px';
+
+        //we tell scrollbars to recalculate their dimensions since we changed our height
+        if (heightChanged) {
+          bs.trigger(bs.eventTypes.refresh)
+        }
     });
 }
 
